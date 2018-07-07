@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<body>
+
+	<div id="response"></div>
+
+	<div class="container">
+		<form class="form-horizontal" id="countryForm">
+
+					<label class="col-md-4 control-label" for="code">Land code</label>
+
+						<input id="landcode" name="code" type="text" placeholder=""
+							class="form-control input-md" required>
+
+
+					<label class="col-md-4 control-label" for="iso3">Iso3</label>
+					<input id="iso3" name="iso3" type="text" placeholder=""
+							class="form-control input-md" required>
+
+				<label class="col-md-4 control-label" for="name">Naam</label>
+						<input id="name" name="name" type="text" placeholder=""
+							class="form-control input-md" required>
+
+					<label class="col-md-4 control-label" for="capital">Hoofdstad</label>
+						<input id="capital" name="capital" type="text" placeholder=""
+							class="form-control input-md" required>
+
+					<label class="col-md-4 control-label" for="continent">Continent</label>
+						<input id="continent" name="continent" type="text" placeholder=""
+							class="form-control input-md" required>
+
+
+					<label class="col-md-4 control-label" for="region">Regio</label>
+						<input id="region" name="region" type="text" placeholder=""
+							class="form-control input-md" required>
+
+					<label class="col-md-4 control-label" for="goverment">Goverment</label>
+						<input id="goverment" name="goverment" type="text" placeholder=""
+							class="form-control input-md" required>
+
+
+					<label class="col-md-4 control-label" for="population">Population</label>
+						<input id="population" name="population" type="text"
+							placeholder="" class="form-control input-md" required="">
+
+					<label class="col-md-4 control-label" for="population">Surface</label>
+						<input id="surface" name="surface" type="text" placeholder=""
+							class="form-control input-md" required="">
+
+
+					<label class="col-md-4 control-label" for="lat">Latitude</label>
+						<input id="lat" name="lat" type="text" placeholder=""
+							class="form-control input-md" required="">
+
+					<label class="col-md-4 control-label" for="longitude">Longitude</label>
+						<input id="longitude" name="longitude" type="text" placeholder=""
+							class="form-control input-md" required="">
+
+				<!-- Button (Double) -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="save"></label>
+					<div class="col-md-8">
+						<button id="save" name="save" onclick="event.preventDefault();"
+							class="btn btn-success">Save</button>
+						<button id="cancel" name="cancel"
+							onclick="window.location.href='/les5.htmlsss'"
+							class="btn btn-danger">Cancel</button>
+					</div>
+				</div>
+
+			</fieldset>
+		</form>
+
+	</div>
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="lib/bootstrap//js/bootstrap.min.js"></script>
+	<script src="newLand.js"></script>
+</body>
+
+
+</html>

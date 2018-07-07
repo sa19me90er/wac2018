@@ -1,0 +1,47 @@
+* {
+  font-size: 100%;
+ 
+ font-family: Tahoma;
+}
+
+
+.container{
+	padding-top:20px;
+}
+body{
+		background-color: DarkKhaki;
+	
+}
+.panel-body{
+	background-color: DarkKhaki;
+}
+.panel-heading{
+		background-color: Sienna ;
+ 		padding: 5px;
+ 		font-color: white;
+ 		color: white;
+	
+}
+
+table{
+	background-color: Sienna ;
+	 		padding: 5px;
+	 		 font-color: white;
+	
+}
+td:hover, li:hover{
+   color: white;
+}
+
+td, #stad {cursor: pointer;}
+
+
+.row {
+  display: flex;
+   width: 100%;
+}
+
+.col-md-6 {
+width:50%;
+  padding:   1em;
+}

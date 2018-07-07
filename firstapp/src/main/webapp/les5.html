@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les 5</title>
+
+<link rel="stylesheet" href="style5.css" />
+
+<body>
+	<div class="container">
+	<a href="login.html" > Sign in</a>
+	<p id="username"> <p> 
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Locatie</h3>
+					</div>
+					<div class="col">
+						<ul id="location-items">
+							<li><label for=landcode>Land Code: <span id="countrycode"></label></li>
+							<li><label for=land>Land: <span id="land"></label></li>
+							<li><label for=regio>Regio: <span id="regio"></label></li>
+							<li><label for=stad>Stad: <span id="stad"></label></li>
+							<li><label for=postcode>Postcode: <span
+									id="postcode"></label></li>
+							<li><label for=latitude>Latitude: <span
+									id="latitude"></label></li>
+							<li><label for=longitude>Longitude: <span
+									id="longitude"></label></li>
+							<li><label for=ip>IP: <span id="ip"></label></li>
+
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 id="h3-1">Het Weer in</h3>
+
+					</div>
+					<div class="col">
+						<ul id="weatherInfo">
+							<li><label for=temptatuur>Temptatuur: <span
+									id="temptatuur"></label></li>
+							<li><label for=luchtvochtigheid>Luchtvochtigheid: <span
+									id="luchtvochtigheid"></label></li>
+							<li><label for=windsnelheid>Windsnelheid: <span
+									id="windsnelheid"></label></li>
+							<li><label for=windrichting>Windrichting: <span
+									id="windrichting"></label></li>
+							<li><label for=zonsopgang>Zonsopgang: <span
+									id="zonsopgang"></label></li>
+							<li><label for=zonsondergang>Zonsondergang: <span
+									id="zonsondergang"></label></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div id="response"></div>
+		
+		<div id=form>
+			</div>
+		
+		<div class="row2">
+			<div class="col-md">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Landen</h3>
+					</div>
+					<div style="overflow-x:auto;" class="panel-body">
+						<br>
+						<a href="newLand.html"> Nieuw Land maken</a>
+						<table class="table table-hover" id="destination-items">
+							<thead>
+								<tr>
+									<th>Land</th>
+									<th>Hoofdstad</th>
+									<th>Regio</th>
+									<th>Oppervlakte</th>
+									<th>Inwonders</th>
+								</tr>
+							</thead>
+							<tbody id="destination-items-body">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script
+ 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+	<script src="lib/bootstrap//js/bootstrap.min.js"></script>
+	<script src="les5js.js"></script>
+</body>
+</html>
