@@ -131,7 +131,7 @@ function initPage(result){
 function loadCountries(){
 
 
-	fetch("/firstapp/restservices/countries/")
+	fetch("/restservices/countries/")
 	.then(function (response){return response.json();})
 	.then(function(myJson){
 		for (const m of myJson) {
@@ -165,7 +165,7 @@ function loadCountries(){
 		    $(tr).on("click", ".remove", function(){
 		    	
 		    	var fetchoptions = { method: 'DELETE', headers : { 'Authorization': 'Bearer ' + window.sessionStorage.getItem("sessionToken") }}
-		    			fetch("/firstapp/restservices/countries/delete/" + m.code, fetchoptions)
+		    			fetch("/restservices/countries/delete/" + m.code, fetchoptions)
 		    			.then(function(response) {
 		    			if (response.ok) {
 		    			console.log("Country deleted!");
