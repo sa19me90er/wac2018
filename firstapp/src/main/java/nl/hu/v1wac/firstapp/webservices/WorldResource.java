@@ -116,7 +116,7 @@ public class WorldResource
 	@DELETE
 	@Path("delete/{code}")
 	@Produces("application/json")
-//	@RolesAllowed("user")
+	@RolesAllowed("user")
 	public void delete(@PathParam("code") String code)
 	{
 		_countryDao.delete(code);

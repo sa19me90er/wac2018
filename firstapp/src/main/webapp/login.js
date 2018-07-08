@@ -5,7 +5,7 @@ function login(event) {
 	fetch("restservices/authentication", { method: 'POST', body: encData })
 	.then(function(response) {
 		if (response.ok) {
-		window.location = "/firstapp/les5.html";
+	//	window.location = "/firstapp/les5.html";
 			return response.json();}
 		else alert( "Wrong username/password");
 		})

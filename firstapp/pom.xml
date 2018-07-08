@@ -78,13 +78,13 @@
 			<version>9.3-1100-jdbc41</version>
 		</dependency>
 
-<!-- New !!!!!!!!!!!!!!!!! -->
+		<!-- New !!!!!!!!!!!!!!!!! -->
 
-<dependency>
-    <groupId>org.glassfish.jersey.media</groupId>
-    <artifactId>jersey-media-json-jackson</artifactId>
-    <version>2.27</version>
-</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.27</version>
+		</dependency>
 
 
 
@@ -107,18 +107,18 @@
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>
 									<artifactId>webapp-runner</artifactId>
-									<version>8.5.11.3</version>
+									<version>9.0.8.0</version>
 									<destFileName>webapp-runner.jar</destFileName>
 								</artifactItem>
 								<artifactItem>
 									<groupId>org.apache.tomcat</groupId>
 									<artifactId>tomcat-dbcp</artifactId>
-									<version>8.0.33</version>
+									<version>9.0.8</version>
 								</artifactItem>
 								<artifactItem>
 									<groupId>org.postgresql</groupId>
 									<artifactId>postgresql</artifactId>
-									<version>9.4.1212</version>
+									<version>42.2.2</version>
 								</artifactItem>
 							</artifactItems>
 						</configuration>
