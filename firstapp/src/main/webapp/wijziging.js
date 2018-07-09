@@ -57,6 +57,7 @@ $(document).ready(function (){
                }
            })		.then(response => response.json())
 		.then(function(myJson) { console.log(myJson); })
+
 		});
 
 //

@@ -18,7 +18,7 @@
                }
            })		.then(response => response.json())
 		.then(function(myJson) { console.log(myJson); 
-		window.location = "/firstapp/les5.html";})
+		window.location = "/les5.html";})
 		});
 	
   

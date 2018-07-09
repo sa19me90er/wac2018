@@ -63,43 +63,43 @@ public class WorldResource
 
 
 	
-//	@GET
-//	@Path("{code}")
-//	@Produces("application/json")
-//	public String getCountryInfo(@PathParam("code") String code) {
-//		WorldService service = ServiceProvider.getWorldService();
-//		Country country = service.getCountryByCode(code);
-//
-//		if (country == null) {
-//			throw new WebApplicationException("No such country!");
-//		}
-//
-//		JsonObjectBuilder job = Json.createObjectBuilder();
-//		job.add("code", country.getCode());
-//		job.add("iso3", country.getIso3());
-//		job.add("naam", country.getName());
-//		job.add("continent", country.getContinent());
-//		job.add("capital", country.getCapital());
-//		job.add("region", country.getRegion());
-//		job.add("surface", country.getSurface());
-//		job.add("population", country.getPopulation());
-//		job.add("government", country.getGovernment());
-//		job.add("lat", country.getLatitude());
-//		job.add("lng", country.getLongitude());
-//
-//		return job.build().toString();
-//
-//	}
-	
 	@GET
-	@Path("{country}")
+	@Path("{code}")
 	@Produces("application/json")
-	public String getCn(@PathParam("country") String country)
-	{
-		ArrayList<Country> countries = _countryDao.findByCode(country);
-		return getObjects(countries);
+	public String getCountryInfo(@PathParam("code") String code) {
+		WorldService service = ServiceProvider.getWorldService();
+		Country country = service.getCountryByCode(code);
+
+		if (country == null) {
+			throw new WebApplicationException("No such country!");
+		}
+
+		JsonObjectBuilder job = Json.createObjectBuilder();
+		job.add("code", country.getCode());
+		job.add("iso3", country.getIso3());
+		job.add("naam", country.getName());
+		job.add("continent", country.getContinent());
+		job.add("capital", country.getCapital());
+		job.add("region", country.getRegion());
+		job.add("surface", country.getSurface());
+		job.add("population", country.getPopulation());
+		job.add("government", country.getGovernment());
+		job.add("lat", country.getLatitude());
+		job.add("lng", country.getLongitude());
+
+		return job.build().toString();
+
 	}
 	
+//	@GET
+//	@Path("{country}")
+//	@Produces("application/json")
+//	public String getCn(@PathParam("country") String country)
+//	{
+//		ArrayList<Country> countries = _countryDao.findByCode(country);
+//		return getObjects(countries);
+//	}
+//	
 	@DELETE
 	@Path("delete/{code}")
 	@Produces("application/json")
