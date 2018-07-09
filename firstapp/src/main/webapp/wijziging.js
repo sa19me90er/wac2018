@@ -9,11 +9,11 @@ $(document).ready(function (){
 			  success: function(result){
 				  	$("#code").val(result.code);
 					$("#iso3").val(result.iso3);
-					$("#name").val(result.name);
+					$("#name").val(result.naam);
 					$("#capital").val(result.capital);
 					$("#continent").val(result.continent);
 					$("#region").val(result.region);
-					$("#goverment").val(result.goverment);
+					$("#goverment").val(result.government);
 					$("#population").val(result.population);
 					$("#lat").val(result.lat);
 					$("#longitude").val(result.lng);
