@@ -2,7 +2,7 @@ $(document).ready(function() {
 function login(event) {
 	var formData = new FormData(document.querySelector("#loginform"));
 	var encData = new URLSearchParams(formData.entries());
-	fetch("restservices/authentication", { method: 'POST', body: encData })
+	fetch("/restservices/authentication", { method: 'POST', body: encData })
 	.then(function(response) {
 		if (response.ok) {
 		window.location = "/firstapp/les5.html";

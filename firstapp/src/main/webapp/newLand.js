@@ -10,7 +10,7 @@
 		var encData = new URLSearchParams(formData.entries());
 		formser= $("#countryForm").serialize() ;
 
-	       fetch('/firstapp/restservices/countries?'+encData, {
+	       fetch('/restservices/countries?'+encData, {
                body: encData,
                method: 'POST',
                headers: {
