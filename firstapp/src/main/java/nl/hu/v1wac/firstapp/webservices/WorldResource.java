@@ -90,27 +90,14 @@ public class WorldResource
 //		return job.build().toString();
 //
 //	}
+	
 	@GET
 	@Path("{country}")
 	@Produces("application/json")
 	public String getCn(@PathParam("country") String country)
 	{
-		Country c = _countryDao.findByCode(country);
-		JsonObjectBuilder job = Json.createObjectBuilder();
-
-		job.add("code", c.getCode());
-		job.add("name", c.getName());
-		job.add("capital", c.getCapital());
-		job.add("surface", c.getSurface());
-		job.add("goverment", c.getGovernment());
-		job.add("lat", c.getLatitude());
-		job.add("lng", c.getLongitude());
-		job.add("iso3", c.getIso3());
-		job.add("continent", c.getContinent());
-		job.add("region", c.getRegion());
-		job.add("population", c.getPopulation());
-
-		return job.build().toString();
+		ArrayList<Country> countries = _countryDao.findByCode(country);
+		return getObjects(countries);
 	}
 	
 	@DELETE

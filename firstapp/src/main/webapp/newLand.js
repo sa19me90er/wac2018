@@ -1,4 +1,4 @@
-document.querySelector("#save").addEventListener("click", function() {
+//document.querySelector("#save").addEventListener("click", function() {
 ////  var formData = new FormData(document.querySelector("#countryForm"));
 ////  var encData = new URLSearchParams(formData.entries());
 //
@@ -10,7 +10,7 @@ document.querySelector("#save").addEventListener("click", function() {
 		var encData = new URLSearchParams(formData.entries());
 		formser= $("#countryForm").serialize() ;
 
-	       fetch('restservices/countries?'+encData, {
+	       fetch('/firstapp/restservices/countries?'+encData, {
                body: encData,
                method: 'POST',
                headers: {
@@ -18,7 +18,7 @@ document.querySelector("#save").addEventListener("click", function() {
                }
            })		.then(response => response.json())
 		.then(function(myJson) { console.log(myJson); 
-		window.location = "/les5.html";})
+		window.location = "/firstapp/les5.html";})
 		});
 	
   
@@ -38,6 +38,6 @@ document.querySelector("#save").addEventListener("click", function() {
 //			  window.location = "/firstapp/les5.html";
 //		  },
 //		});
-});
+//});
 
 

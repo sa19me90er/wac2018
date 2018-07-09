@@ -107,6 +107,7 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 //		return country;
 //	}
 	
+	@Override
 	public Country update(Country country)
 	{
 		 nonQuery("UPDATE public.country"+ 
@@ -136,6 +137,8 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 		return country;
 	}
 
+	
+	@Override
 	public boolean delete(String country)
 	{
 	
@@ -147,6 +150,7 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 //		return nonQuery("DELETE FROM Country WHERE Code = ?",country.getCode());
 //	}
 //	
+	@Override
 	public ArrayList<Country> findAll()
 	{
 		
@@ -160,35 +164,34 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 		return returnValue;
 	}
 	
-	public Country findByCode(String code) {
-
-		Country country = null;
-		try (Connection con = super.getConnection()) {
-			Statement stmt = con.createStatement();
-			ResultSet dbResultSet = stmt.executeQuery(
-					"SELECT code, iso3, name,capital, continent, region, surfacearea,population,governmentform, latitude,longitude FROM public.country WHERE code =  '"
-							+ code + "'");
-
-			while (dbResultSet.next()) {
-				country = new Country(dbResultSet.getString("CODE"), dbResultSet.getString("ISO3"),
-						dbResultSet.getString("NAME"), dbResultSet.getString("CAPITAL"),
-						dbResultSet.getString("CONTINENT"), dbResultSet.getString("REGION"),
-						dbResultSet.getDouble("SURFACEAREA"), dbResultSet.getInt("POPULATION"),
-						dbResultSet.getString("GOVERNMENTFORM"), dbResultSet.getDouble("LATITUDE"),
-						dbResultSet.getDouble("LONGITUDE"));
-
-			}
-
-			dbResultSet.close();
-			stmt.close();
-		} catch (Exception e) {
-			System.out.println(e);
-			System.out.println(country);
-		}
-		System.out.println(country);
-		return country;
-
-	}	
+//	public Country findByCode(String code) {
+//
+//		Country country = null;
+//		try (Connection con = super.getConnection()) {
+//			Statement stmt = con.createStatement();
+//			ResultSet dbResultSet = stmt.executeQuery(
+//					"SELECT code, iso3, name,capital, continent, region, surfacearea,population,governmentform, latitude,longitude FROM public.country WHERE code =  '"+ code + "'");
+//
+//			while (dbResultSet.next()) {
+//				country = new Country(dbResultSet.getString("CODE"), dbResultSet.getString("ISO3"),
+//						dbResultSet.getString("NAME"), dbResultSet.getString("CAPITAL"),
+//						dbResultSet.getString("CONTINENT"), dbResultSet.getString("REGION"),
+//						dbResultSet.getDouble("SURFACEAREA"), dbResultSet.getInt("POPULATION"),
+//						dbResultSet.getString("GOVERNMENTFORM"), dbResultSet.getDouble("LATITUDE"),
+//						dbResultSet.getDouble("LONGITUDE"));
+//
+//			}
+//
+//			dbResultSet.close();
+//			stmt.close();
+//		} catch (Exception e) {
+//			System.out.println(e);
+//			System.out.println(country);
+//		}
+//		System.out.println(country);
+//		return country;
+//
+//	}	
 	
 	
 //	public Country findByCode(String code)
@@ -202,9 +205,25 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 //		return getByDictonary(country);
 //		
 //	}
+//	
+	
+	@Override
+	public ArrayList<Country> findByCode(String code){
+	{
+		
+		ArrayList<Map<String, Object>> result = query("SELECT * FROM country WHERE code =  '"+ code + "'");
+		ArrayList<Country> returnValue = new ArrayList<Country>();
+		for(Map<String, Object> country : result)
+		{
+			returnValue.add(getByDictonary(country));
+		}
+		
+		return returnValue;
+	} 
+	}
 	
 	
-	
+	@Override
 	public ArrayList<Country> findTenLargestPopulations()
 	{
 		ArrayList<Map<String, Object>> result = query("SELECT Code,iso3,name,capital,continent,region,surfacearea,population,governmentform,latitude,longitude FROM Country order by population desc limit 10");
@@ -217,6 +236,7 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 		return returnValue;
 	} 
 	
+	@Override
 	public ArrayList<Country> findTenLargestSurface()
 	{
 		ArrayList<Map<String, Object>> result = query("SELECT Code,iso3,name,capital,continent::varchar,region,surfacearea,population,governmentform,latitude,longitude FROM Country order by surfacearea desc limit 10");
@@ -228,6 +248,7 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 		
 		return returnValue;
 	} 
+	
 	
 	private Country getByDictonary(Map<String, Object> country)
 	{

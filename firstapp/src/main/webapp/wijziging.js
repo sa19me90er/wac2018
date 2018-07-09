@@ -4,7 +4,7 @@ $(document).ready(function (){
 		console.log(code);
 		$.ajax({
 			  type: "get",
-			  url: "/restservices/countries/"+code,
+			  url: "/firstapp/restservices/countries/"+code,
 
 			  success: function(result){
 				  	$("#code").val(result.code);
