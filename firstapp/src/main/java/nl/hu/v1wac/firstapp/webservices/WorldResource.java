@@ -77,13 +77,13 @@ public class WorldResource
 		JsonObjectBuilder job = Json.createObjectBuilder();
 		job.add("code", country.getCode());
 		job.add("iso3", country.getIso3());
-		job.add("naam", country.getName());
+		job.add("name", country.getName());
 		job.add("continent", country.getContinent());
 		job.add("capital", country.getCapital());
 		job.add("region", country.getRegion());
 		job.add("surface", country.getSurface());
 		job.add("population", country.getPopulation());
-		job.add("government", country.getGovernment());
+		job.add("goverment", country.getGovernment());
 		job.add("lat", country.getLatitude());
 		job.add("lng", country.getLongitude());
 
