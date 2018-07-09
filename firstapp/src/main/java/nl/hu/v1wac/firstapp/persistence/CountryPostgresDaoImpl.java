@@ -164,64 +164,52 @@ public class CountryPostgresDaoImpl extends BaseDao implements CountryDao {
 		return returnValue;
 	}
 	
-//	public Country findByCode(String code) {
-//
-//		Country country = null;
-//		try (Connection con = super.getConnection()) {
-//			Statement stmt = con.createStatement();
-//			ResultSet dbResultSet = stmt.executeQuery(
-//					"SELECT code, iso3, name,capital, continent, region, surfacearea,population,governmentform, latitude,longitude FROM public.country WHERE code =  '"+ code + "'");
-//
-//			while (dbResultSet.next()) {
-//				country = new Country(dbResultSet.getString("CODE"), dbResultSet.getString("ISO3"),
-//						dbResultSet.getString("NAME"), dbResultSet.getString("CAPITAL"),
-//						dbResultSet.getString("CONTINENT"), dbResultSet.getString("REGION"),
-//						dbResultSet.getDouble("SURFACEAREA"), dbResultSet.getInt("POPULATION"),
-//						dbResultSet.getString("GOVERNMENTFORM"), dbResultSet.getDouble("LATITUDE"),
-//						dbResultSet.getDouble("LONGITUDE"));
-//
-//			}
-//
-//			dbResultSet.close();
-//			stmt.close();
-//		} catch (Exception e) {
-//			System.out.println(e);
-//			System.out.println(country);
-//		}
-//		System.out.println(country);
-//		return country;
-//
-//	}	
-	
-	
-//	public Country findByCode(String code)
-//	{
-//		ArrayList<Map<String, Object>> result = query("SELECT Code,iso3,name,capital,continent,region,surfacearea,population,governmentform,latitude,longitude FROM Country where Code = ?", code);
-//		
-//		if(result == null || result.size() == 0)
-//			return null;
-//		
-//		Map<String, Object> country = result.get(0);
-//		return getByDictonary(country);
-//		
-//	}
+	public Country findByCode(String code) {
+
+		Country country = null;
+		try (Connection con = super.getConnection()) {
+			Statement stmt = con.createStatement();
+			ResultSet dbResultSet = stmt.executeQuery(
+					"SELECT code, iso3, name,capital, continent, region, surfacearea,population,governmentform, latitude,longitude FROM public.country WHERE code =  '"
+							+ code + "'");
+
+			while (dbResultSet.next()) {
+				country = new Country(dbResultSet.getString("CODE"), dbResultSet.getString("ISO3"),
+						dbResultSet.getString("NAME"), dbResultSet.getString("CAPITAL"),
+						dbResultSet.getString("CONTINENT"), dbResultSet.getString("REGION"),
+						dbResultSet.getDouble("SURFACEAREA"), dbResultSet.getInt("POPULATION"),
+						dbResultSet.getString("GOVERNMENTFORM"), dbResultSet.getDouble("LATITUDE"),
+						dbResultSet.getDouble("LONGITUDE"));
+
+			}
+
+			dbResultSet.close();
+			stmt.close();
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println(country);
+		}
+		System.out.println(country);
+		return country;
+
+	}
 //	
 	
-	@Override
-	public ArrayList<Country> findByCode(String code){
-	{
-		
-		ArrayList<Map<String, Object>> result = query("SELECT * FROM country WHERE code =  '"+ code + "'");
-		ArrayList<Country> returnValue = new ArrayList<Country>();
-		for(Map<String, Object> country : result)
-		{
-			returnValue.add(getByDictonary(country));
-		}
-		
-		return returnValue;
-	} 
-	}
-	
+//	@Override
+//	public ArrayList<Country> findByCode(String code){
+//	{
+//		
+//		ArrayList<Map<String, Object>> result = query("SELECT * FROM country WHERE code =  '"+ code + "'");
+//		ArrayList<Country> returnValue = new ArrayList<Country>();
+//		for(Map<String, Object> country : result)
+//		{
+//			returnValue.add(getByDictonary(country));
+//		}
+//		
+//		return returnValue;
+//	} 
+//	}
+//	
 	
 	@Override
 	public ArrayList<Country> findTenLargestPopulations()

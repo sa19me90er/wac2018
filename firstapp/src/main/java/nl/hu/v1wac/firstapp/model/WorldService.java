@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import nl.hu.v1wac.firstapp.persistence.CountryDao;
+import nl.hu.v1wac.firstapp.persistence.CountryPostgresDaoImpl;
 
 public class WorldService {
 	private List<Country> allCountries = new ArrayList<Country>();
@@ -56,13 +57,8 @@ public class WorldService {
 	
 	public Country getCountryByCode(String code) {
 		Country result = null;
-		
-		for (Country c : allCountries) {
-			if (c.getCode().equals(code)) {
-				result = c;
-				break;
-			}
-		}
+		result = new CountryPostgresDaoImpl().findByCode(code);
+
 		
 		return result;
 	}

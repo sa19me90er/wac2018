@@ -18,7 +18,7 @@ public interface CountryDao
 	public Country update(Country country);
 	public boolean delete(String country);
 	public ArrayList<Country> findAll();
-	public ArrayList<Country> findByCode(String code) ;
+	public Country findByCode(String code) ;
 	public ArrayList<Country> findTenLargestPopulations();
 	public ArrayList<Country> findTenLargestSurface();
 //	public boolean delete(Country country);
